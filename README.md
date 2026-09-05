@@ -85,7 +85,6 @@ The project also contains a separate `driver/` workflow for driver/task-based de
 - Update task status
 - Driver dashboard
 
-The **Volunteer** and **Driver** modules are both retained because they represent two implemented delivery workflows in the current project.
 
 ---
 
@@ -276,8 +275,6 @@ The main database is:
 foodsave_db
 ```
 
-The project also contains supplemental SQL files for features added during development. For a **fresh install**, start with `database/foodsave_db.sql` (the consolidated schema already includes driver delivery tables). If you are upgrading an older FoodSave database, run `database/driver_tables.sql` once so the `drivers`, `delivery_tasks`, and `driver_tracking` tables and the `driver` user type are available; the migration also backfills pending delivery tasks for already-approved pickup requests. Do not blindly import every supplemental SQL file on top of an already-current database; use them only when upgrading an older database and checking which changes are missing.
-
 ## 5. Configure environment values
 
 Copy:
@@ -344,42 +341,6 @@ GOOGLE_MAPS_API_KEY
 ```
 
 and is **not stored in `includes/config.php`**.
-
-### If the old key was already pushed to GitHub
-
-Treat it as compromised.
-
-1. Open Google Cloud Console.
-2. Find the Google Maps API key.
-3. Restrict it to the APIs FoodSave actually needs.
-4. Add appropriate HTTP referrer restrictions for browser use.
-5. Rotate/delete the old exposed key.
-6. Put the new key only in your local/server `.env`.
-7. Do not commit `.env`.
-
-> Removing a secret from the latest commit does not remove it from Git history. If the repository is public, rotate the key even if you later rewrite Git history.
-
----
-
-# Demo/Test Accounts
-
-The database contains development/test accounts.
-
-| Role | Username | Password |
-|---|---|---|
-| Admin | `admin` | `password` |
-| Donor | `restaurant1` | `password` |
-| Donor | `grocery1` | `password` |
-| NGO | `foodbank1` | `password` |
-| NGO | `shelter1` | `password` |
-
-These are **development credentials only**.
-
-Before any public deployment:
-
-- Replace/remove the demo accounts.
-- Change passwords.
-- Do not reuse these credentials.
 
 ---
 
