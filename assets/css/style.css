@@ -1,0 +1,539 @@
+/* FoodSave Custom Styles */
+
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    position: relative;
+    background-color: #000; /* Fallback */
+    overflow-x: hidden;
+    color: #f8f9fa;
+}
+
+body.auth-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px 60px;
+}
+
+body.auth-page .auth-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    body.auth-page {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://hospitalityinsights.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/AdobeStock_264542845.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -2;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    transform: scale(1.1); /* Prevents blur edges */
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container, .navbar, main, section, .card {
+    position: relative;
+    z-index: 1;
+}
+
+main {
+    color: inherit;
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+    color: #ffffff;
+}
+
+main .card h1,
+main .card h2,
+main .card h3,
+main .card h4,
+main .card h5,
+main .card h6,
+main .modal-content h1,
+main .modal-content h2,
+main .modal-content h3,
+main .modal-content h4,
+main .modal-content h5,
+main .modal-content h6 {
+    color: #212529;
+}
+
+main .card .card-header {
+    background-color: rgba(255, 255, 255, 0.92);
+    color: #212529;
+}
+
+main .card .card-header .badge {
+    color: #fff;
+}
+
+main .card .table thead th {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #212529;
+}
+
+main .card .table tbody td,
+main .card .table tbody th {
+    color: #212529;
+}
+
+main .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.navbar {
+    position: relative;
+    z-index: 1000 !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    -ms-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1001 !important;
+    background-color: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    -ms-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-section {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+/* About Section Styles */
+#about {
+    padding: 4rem 0;
+}
+
+#about .about-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+#about .about-content:hover {
+    transform: translateY(-5px);
+}
+
+#about h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#about p {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Feature Cards Styles */
+#features {
+    padding: 4rem 0;
+}
+
+#features .card {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card,
+.modal-content,
+.offcanvas {
+    color: #212529;
+}
+
+#features .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+#features .card:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+#features .card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+#features .card-text {
+    color: #2c3e50;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.text-success {
+    color: var(--primary-color) !important;
+}
+
+.bg-success {
+    background-color: var(--primary-color) !important;
+}
+
+/* Dashboard Styles */
+.dashboard-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+.stats-card {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.stats-card h1,
+.stats-card h2,
+.stats-card h3,
+.stats-card h4,
+.stats-card h5,
+.stats-card h6,
+.stats-card p,
+.stats-card i,
+.stats-card span {
+    color: #fff !important;
+}
+
+main .card .text-muted,
+.modal-content .text-muted,
+.offcanvas .text-muted {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.table-responsive {
+    border-radius: 0.5rem;
+    overflow-x: auto;
+}
+
+.table-overlay {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 1.25rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    color: #f8f9fa;
+    width: 100%;
+}
+
+.table-overlay .table {
+    color: inherit;
+    margin-bottom: 0;
+}
+
+.table-overlay .table thead th,
+.table-overlay .table tbody td {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #f8f9fa;
+}
+
+.table-overlay .table thead th {
+    background-color: transparent;
+}
+
+.table-overlay .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-overlay .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.badge-status {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+}
+
+.status-available {
+    background-color: var(--success-color);
+}
+
+.status-requested {
+    background-color: var(--warning-color);
+}
+
+.status-picked-up {
+    background-color: var(--info-color);
+}
+
+.status-expired {
+    background-color: var(--danger-color);
+}
+
+.status-pending {
+    background-color: var(--warning-color);
+}
+
+.status-approved {
+    background-color: var(--success-color);
+}
+
+.status-rejected {
+    background-color: var(--danger-color);
+}
+
+.status-completed {
+    background-color: var(--info-color);
+}
+
+/* Form Styles */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Alert Styles */
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.sidebar small.text-muted {
+    color: #ffffff !important;
+    opacity: 0.9;
+}
+
+.sidebar .text-center.mb-4 h5,
+.sidebar .text-center.mb-4 small {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar .nav-link {
+    color: #ffffff !important;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    margin-bottom: 0.25rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    color: #ffffff !important;
+    background-color: var(--primary-color);
+    transform: translateX(5px);
+    font-weight: 600;
+}
+
+.sidebar .nav-link i {
+    margin-right: 0.5rem;
+    width: 1rem;
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+        min-height: auto;
+        padding: 3rem 0;
+    }
+    
+    .hero-section .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .sidebar {
+        min-height: auto;
+    }
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Custom Utilities */
+.text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.border-success {
+    border-color: var(--primary-color) !important;
+}
+
+.bg-light-success {
+    background-color: rgba(40, 167, 69, 0.1) !important;
+}
+
+/* End of Custom Utilities */
+
+/* Responsive Adjustments for About and Features */
+@media (max-width: 768px) {
+    #about {
+        padding: 3rem 0;
+    }
+
+    #about .about-content {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+
+    #features {
+        padding: 3rem 0;
+    }
+
+    #features .card {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

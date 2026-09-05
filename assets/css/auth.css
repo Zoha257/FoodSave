@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    position: relative;
+    background-color: #000; /* Fallback */
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://hospitalityinsights.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/AdobeStock_264542845.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -2;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    transform: scale(1.1); /* Prevents blur edges */
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+.auth-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    max-width: 450px;
+    margin: 20px;
+}
+
+.auth-container h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.auth-container .form-control {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+}
+
+.auth-container .btn-primary {
+    width: 100%;
+    background: #007bff;
+    border: none;
+    padding: 12px;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.auth-container .alert {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+}
+
+.auth-container .form-label {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    letter-spacing: 0.3px;
+}
+
+.auth-container a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.auth-container a:hover {
+    color: #007bff;
+    transform: translateY(-1px);
+}

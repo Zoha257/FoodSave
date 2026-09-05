@@ -1,0 +1,99 @@
+/* Import base auth styles */
+@import url('auth.css');
+
+/* Additional styles specific to login pages */
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+}
+
+.login-container h4 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.login-container .form-control {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+}
+
+.login-container .form-label {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    letter-spacing: 0.3px;
+}
+
+.login-container .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.login-container .btn-primary {
+    background: #007bff;
+}
+
+.login-container .alert {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+}
+
+.login-container a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.login-container a:hover {
+    color: #007bff;
+    transform: translateY(-1px);
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.login-footer a {
+    margin: 0 0.5rem;
+}
+
+/* Optional: Add subtle animation for container appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container {
+    animation: fadeIn 0.5s ease-out;
+}
